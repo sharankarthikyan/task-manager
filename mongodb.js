@@ -1,3 +1,5 @@
+// This file is not part of the Tast-manager project. But, it is used for learning.
+
 // CRUD  Create Read Update Delete
 
 // This is regular procedure.
@@ -84,5 +86,105 @@ MongoClient.connect(
     //     console.log(result.ops);
     //   }
     // );
+
+    // Find one particular user
+    // This is the way to find values by ObjectID
+    // db.collection("users").findOne(
+    //   { _id: new ObjectID("5fd44edd56ef75267090e108") }, // Be carefull in this line
+    //   (error, user) => {
+    //     if (error) {
+    //       return console.log("Unable to find...");
+    //     }
+    //     console.log(user);
+    //   }
+    // );
+
+    // This is one way using table attributes.
+    // db.collection("users").findOne({ name: "Sharan" }, (error, user) => {
+    //   if (error) {
+    //     return console.log("Unable to find...");
+    //   }
+    //   console.log(user);
+    // });
+
+    // Using Find method.
+    // db.collection("users")
+    //   .find({ age: 20 })
+    //   .toArray((error, users) => {
+    //     console.log(users);
+    //   });
+
+    // This is count method.
+    // db.collection("users")
+    //   .find({ age: 20 })
+    //   .count((error, count) => {
+    //     console.log(count);
+    //   });
+
+    // Update
+    // Update one
+    // const updatePromise = db.collection("users").updateOne(
+    //   {
+    //     _id: new ObjectID("5fd44d2592910526b0d3b06e"),
+    //   },
+    //   {
+    //     // Refer Doc, we have lot of operation to perform like Incrementation. $inc.
+    //     $set: {
+    //       name: "Sne",
+    //     },
+    //   }
+    // );
+
+    // updatePromise
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    // Update Many
+    // db.collection("tasks")
+    //   .updateMany(
+    //     {
+    //       completed: false,
+    //     },
+    //     {
+    //       $set: {
+    //         completed: true,
+    //       },
+    //     }
+    //   )
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    // Delete
+    // Delete One
+    // db.collection("users")
+    //   .deleteOne({
+    //     name: "Roshini",
+    //   })
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    // Delete Many
+    // db.collection("users")
+    //   .deleteMany({
+    //     age: 20,
+    //   })
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }
 );
